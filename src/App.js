@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Counter from "./components/Counter";
+import { useState } from "react";
+
+// const tabCounters = [<Counter />];
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
 
 function App() {
+  const [tab, setTab] = useState([0]);
+  const newTab = [...tab];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+          newTab.push(newTab[0] + 1);
+          setTab(newTab);
+        }}
+      >
+        Add Counter
+      </button>
+      {newTab.length}
     </div>
   );
 }
