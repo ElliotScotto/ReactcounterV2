@@ -23,6 +23,12 @@ function App() {
       >
         Add Counter
       </button>
+      <Counter />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       {newTab.length}
     </div>
   );
